@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root to: 'tasks#index'
+  get 'blogs/index'
+  # root to: 'tasks#index'
+  root to: 'blogs#index'
+  resources :blogs
 
   resources :tasks
 end
