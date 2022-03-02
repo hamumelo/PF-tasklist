@@ -4,19 +4,18 @@
 
 
 <div class="col-md-8">
-<%= month_calendar events: @blogs do |date, blogs| %>
+<%= week_calendar events: @events do |date, events| %>
   <%= date.day %>
 
     <div>
-      <%= link_to '＋', new_blog_path(date) %>
+      <%= link_to '＋', new_event_path(date) %>
     </div>
-  <% blogs.each do |blog| %>
+  <% events.each do |event| %>
     <div>
-      <%= link_to blog.title, blog %>
+      <%= link_to event.title, event %>
     </div>
   <% end %>
 <% end %>
 </div>
 </div>
 </div>
-
