@@ -1,11 +1,23 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+    # 顧客ページ
+ namespace :admin do
+#   resources :users, only:[:new, :index, :show, :edit, :update]
+  resources :users
+  # get '/users' => 'user#index'
+  # get '/users/my_page' => 'user#show'
+  # get '/users/edit' => 'user#edit'
+  # patch '/users' => 'user#update'
+  # get '/users/unsubscribe' => 'user#unsubscribe'
+  # patch '/users/withdraw' => 'user#withdraw'
+end
+
+
   devise_for :admins
   root to: 'homes#top'
-  get 'events/index'
-  get 'blogs/index'
-  # root to: 'tasks#index'
   # root to: 'events#index'
   resources :events
-
-  resources :tasks
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 end

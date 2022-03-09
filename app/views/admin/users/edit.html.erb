@@ -1,0 +1,64 @@
+<!--会員新規登録画面-->
+<div class="container">
+  <div class="form-group row">
+    <div class="mt-5 col-sm-2.5">
+      <h5 class="bg-light"><strong>新規会員登録</strong></h5>
+    </div>
+  </div>
+
+  <%= form_with model: @user, url: admin_user_path, local: true do |f| %>
+
+     <div class="field row mt-3">
+        <div class="col-sm-2">
+        <small><%= f.label :name, "社員ID" %></small>
+        </div>
+        <div class="field col-sm-3">
+          <%= @user.id %>
+        </div>
+    </div>
+
+     <div class="field row mt-3">
+        <div class="col-sm-2">
+        <small><%= f.label :name, "氏名" %></small>
+        <div class="field col-sm-3">
+          <%= f.text_field :name, autofocus: true, placeholder:"氏名を入力してください", class: "form-control form-control-sm" %>
+        </div>
+        </div>
+    </div>
+
+     <div class="field row mt-2">
+        <div class="col-sm-2">
+        <small><%= f.label :name_kana, "フリガナ" %></small>
+        </div>
+        <div class="field col-sm-3">
+          <%= f.text_field :name_kana, autofocus: true, placeholder:"フリガナを入力してください", class: "form-control form-control-sm" %>
+        </div>
+    </div>
+    </div>
+
+     <div class="field row mt-2">
+        <div class="col-sm-2">
+        <small><%= f.label :name_pass, "氏名パス" %></small>
+        </div>
+        <div class="field col-sm-3">
+          <%= f.text_field :name_pass, autofocus: true, placeholder:"パスワードを入力してください", class: "form-control form-control-sm" %>
+        </div>
+    </div>
+
+     <div class="field row mt-2">
+        <div class="col-sm-2">
+            <%= f.radio_button :is_active, :true %>
+            <%= f.label :is_active, "有効", {value: :true, style: "display: inline-block;", class: "mr-4"} %>
+            <%= f.radio_button :is_active, :false %>
+            <%= f.label :is_active, "退社", {value: :false, style: "display: inline-block;"} %>
+        </div>
+      </div>
+
+     <div class="form-group row mt-3">
+      <div class="col-sm-2"></div>
+       <div class="col-sm-2">
+        <%= f.submit '変更を保存', class:"btn btn-success btn-md btn-block" %>
+    <% end %>
+       </div>
+      </div>
+     </div>

@@ -1,0 +1,38 @@
+<h1>社員登録</h1>
+
+<%= form_with model: @user, url: admin_users_path, local:true do |f| %>
+
+  <div class="name">
+    <%= f.label :氏名 %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="name_kana">
+    <%= f.label :氏名カナ %>
+    <%= f.text_field :name_kana %>
+  </div>
+
+  <div class="name_pass">
+    <%= f.label :氏名パスワード %>
+    <%= f.text_field :name_pass %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="password">
+    <%= f.label :パスワード %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %>
+    <%= f.password_field :encrypted_password, autocomplete: "new-password" %>
+  </div>
+
+
+  <div class="submit">
+    <%= f.submit %>
+  </div>
+
+<% end %>
