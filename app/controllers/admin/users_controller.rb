@@ -9,7 +9,7 @@ class Admin::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    if @user.save
+    if @user.save!
       flash[:success] = '社員情報が登録されました'
       redirect_to admin_users_path
     else
@@ -41,7 +41,7 @@ class Admin::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :name, :name_kana, :name_pass, :encrypted_password, :is_active)
+    params.require(:user).permit(:email, :name, :name_kana, :name_pass, :is_active)
   end
 
 end

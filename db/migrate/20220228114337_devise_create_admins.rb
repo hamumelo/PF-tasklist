@@ -33,6 +33,11 @@ class DeviseCreateAdmins < ActiveRecord::Migration[5.2]
       # t.datetime :locked_at
 
       t.string :name
+      t.string :name_kana
+      t.string :name_pass
+      t.boolean :is_active, null: false, default: true
+      t.datetime :created_at, default: -> { 'NOW()' }
+      t.datetime :updated_at, default: -> { 'NOW()' }
 
 
       t.timestamps null: false

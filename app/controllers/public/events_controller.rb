@@ -1,6 +1,7 @@
-class EventsController < ApplicationController
+class Public::EventsController < ApplicationController
   def index
     @events = Event.all
+     @users = User.all
   end
 
   def new

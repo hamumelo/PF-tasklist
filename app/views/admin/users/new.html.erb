@@ -13,7 +13,7 @@
   </div>
 
   <div class="name_pass">
-    <%= f.label :氏名パスワード %>
+    <%= f.label :ユーザーpass %>
     <%= f.text_field :name_pass %>
   </div>
 
@@ -22,12 +22,9 @@
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
-  <div class="password">
-    <%= f.label :パスワード %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %>
-    <%= f.password_field :encrypted_password, autocomplete: "new-password" %>
+  <div class="name_pass">
+    <%= f.label :password, "パスワード" %>
+    <%= f.text_field :password %>
   </div>
 
 
