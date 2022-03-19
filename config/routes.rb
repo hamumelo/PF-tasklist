@@ -12,7 +12,7 @@ end
   # registrations: 'admin/registrations'
 }
 
-  root to: 'homes#index'
+  root to: 'public/events#index'
 
 # 社員ページ
 
