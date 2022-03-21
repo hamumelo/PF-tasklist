@@ -1,7 +1,11 @@
+  <!--ヘッダー-->
+<%= render 'public/header' %>
+
+
 <p id="notice"><%= notice %></p>
 <div class="show">
 <p>
-  <strong>タイトル</strong>
+  <strong>タスクタイトル</strong>
   <%= @event.title %>
 </p>
 
@@ -12,7 +16,8 @@
 
 <p>
   <strong>日時</strong>
-  <%= @event.start_time.strftime("%m-%d") %>
+  <%= @event.start_time %>
+  <%#= @event.start_time.strftime("%m-%d") %>
 </p>
 
 <%= link_to '編集', edit_event_path(@event) %>

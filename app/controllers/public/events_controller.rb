@@ -1,4 +1,5 @@
 class Public::EventsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @events = Event.all
     @users = User.all
@@ -6,14 +7,15 @@ class Public::EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @event.user_id = current_user.id
   end
 
   def create
     @event = Event.new(event_params)
-    # @event.user_id = current_user.id
+    @event.user_id = current_user.id
     if @event.save
       flash[:success] = 'タスクが投稿されました'
-      redirect_to events_path
+      redirect_to events_path(@event.id)
     else
       flash[:danger] = 'タスクが投稿されません'
       render :new

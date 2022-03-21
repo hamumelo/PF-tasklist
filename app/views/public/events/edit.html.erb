@@ -1,4 +1,7 @@
-<h1>タスク投稿</h1>
+  <!--ヘッダー-->
+<%= render 'public/header' %>
+
+<h1>タスク修正</h1>
 
 <%= form_with model: @event, url: event_path, local:true do |f| %>
 
@@ -8,7 +11,7 @@
   </div>
 
     <div class="time">
-    <%= f.label :開始時間ー終了時間 %>
+    <%= f.label :時間 %>
     <%= f.datetime_select :start_time %>
   </div>
 
@@ -17,9 +20,11 @@
     <%= f.text_area :content %>
   </div>
 
-
-  <div class="submit">
-    <%= f.submit %>
-  </div>
+     <div class="form-group row mt-3">
+       <div class="col-sm-1">
+    <%= f.submit '変更を保存', class:"btn btn-success btn-md btn-block" %>
+       </div>
+      </div>
+     </div>
 
 <% end %>

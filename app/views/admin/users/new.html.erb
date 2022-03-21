@@ -1,3 +1,7 @@
+<!--ヘッダー-->
+<%= render 'admin/header' %>
+
+
 <h1>社員登録</h1>
 
 <%= form_with model: @user, url: admin_users_path, local:true do |f| %>
@@ -28,7 +32,7 @@
   </div>
 
   <div class="submit col-sm-2 mt-3">
-    <%= f.submit %>
+    <%= f.submit '登録', class:"btn btn-success" %>
   </div>
 
 <% end %>
