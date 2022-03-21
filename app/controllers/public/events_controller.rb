@@ -1,7 +1,7 @@
 class Public::EventsController < ApplicationController
   def index
     @events = Event.all
-     @users = User.all
+    @users = User.all
   end
 
   def new
@@ -10,6 +10,7 @@ class Public::EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    # @event.user_id = current_user.id
     if @event.save
       flash[:success] = 'タスクが投稿されました'
       redirect_to events_path

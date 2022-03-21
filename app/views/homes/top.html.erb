@@ -2,12 +2,11 @@
 <%= render 'public/header' %>
 
 <div class="toppage">
-<h1 class="top">予定一覧</h1>
+<h1 class="top">カレンダー</h1>
 
 
 <div class="col-md-8">
-  <% @users.each do |user| %>
-  <%= user.name %>
+  <%= @user.name %>
 <%= week_calendar events: @events do |date, events| %>
   <%= date.day %>
 
@@ -19,7 +18,6 @@
       <%= link_to event.title, event %>
     </div>
   <% end %>
-<% end %>
 <% end %>
 </div>
 </div>

@@ -10,10 +10,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def after_sign_out_path_for(resource)
+    flash[:notice] = "ログアウトしました"
+    new_user_session_path
+  end
+
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_in, keys: [:name_pass, :email])
+    devise_parameter_sanitizer.permit(:sign_in, keys: [:email, :password])
     devise_parameter_sanitizer.permit(:account_update, keys: [:email, :name, :name_kana, :name_pass, :is_active])
   end
 end

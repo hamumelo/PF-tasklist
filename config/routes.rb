@@ -12,7 +12,7 @@ end
   # registrations: 'admin/registrations'
 }
 
-  root to: 'public/events#index'
+  root to: 'homes#top'
 
 # 社員ページ
 
@@ -22,9 +22,9 @@ end
 end
 
   devise_for :users, controllers: {
-  sessions:      'public/users/sessions'
+  sessions:      'public/users/sessions',
 #   passwords:     'public/users/passwords',
-#   registrations: 'public/users/registrations'
+  # registrations: 'public/users/registrations'
 }
 
 
