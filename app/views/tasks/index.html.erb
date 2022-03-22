@@ -1,8 +1,0 @@
-<h1>予定一覧</h1>
-
-<%= link_to '投稿ページへ', new_task_path %>
-<ul>
-  <% @tasks.each do |task| %>
-    <li><%= link_to task.title, task %></li>
-  <% end %>
-</ul>
