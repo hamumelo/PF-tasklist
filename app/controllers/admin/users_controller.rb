@@ -7,8 +7,8 @@ class Admin::UsersController < ApplicationController
   def index
      @users = User.all
     # @q = User.ransack(params[:q])
-     @query = User.ransack(params[:q])
-     @users = @q.result(distinct: true)
+    # @query = User.ransack(params[:q])
+    # @users = @q.result(distinct: true)
   end
 
   def create

@@ -7,7 +7,6 @@ class Public::EventsController < ApplicationController
 
   def new
     @event = Event.new
-    @event.user_id = current_user.id
   end
 
   def create
