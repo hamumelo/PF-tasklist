@@ -19,9 +19,6 @@ ActiveRecord::Schema.define(version: 2022_03_09_152548) do
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.string "name"
-    t.string "name_kana"
-    t.string "name_pass"
-    t.boolean "is_active", default: true, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
@@ -30,14 +27,6 @@ ActiveRecord::Schema.define(version: 2022_03_09_152548) do
 
   create_table "events", force: :cascade do |t|
     t.integer "user_id"
-    t.string "title"
-    t.text "content"
-    t.datetime "start_time"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "tasks", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.datetime "start_time"
