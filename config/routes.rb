@@ -17,7 +17,6 @@ end
 # 社員ページ
 
  scope module: :public do
-#   resources :users
   resources :events
 end
 

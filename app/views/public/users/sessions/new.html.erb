@@ -11,21 +11,21 @@
 
      <div class="field row mt-5 mx-auto">
         <div class="col-sm-2"></div>
-        <div class="col-sm-1">
+        <div class="col-sm-2">
         <small><%= f.label :email, "email" %></small>
         </div>
         <div class="field col-sm-2">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"emailアドレスを入力してください", class: "form-control form-control-sm" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"emailアドレスを入力してください", class: "form-control-sm" %>
         </div>
      </div>
 
      <div class="field row mt-2 mx-auto">
         <div class="col-sm-2"></div>
-        <div class="col-sm-1">
+        <div class="col-sm-2">
         <small><%= f.label :password, "パスワード" %></small>
         </div>
         <div class="col-sm-2">
-         <%= f.password_field :password, autocomplete: "current-password", class: "form-control form-control-sm" %>
+         <%= f.password_field :password, autocomplete: "current-password", class: "form-control-sm" %>
         </div>
      </div>
 

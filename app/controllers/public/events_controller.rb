@@ -1,8 +1,10 @@
 class Public::EventsController < ApplicationController
   before_action :authenticate_user!
+
   def index
-    @events = Event.all
-    @users = User.all
+    @q = User.ransack(params[:q])
+    @users = @q.result(distinct: true)
+    # @events = Event.all
   end
 
   def new
@@ -17,12 +19,14 @@ class Public::EventsController < ApplicationController
       redirect_to events_path(@event.id)
     else
       flash[:danger] = 'タスクが投稿されません'
+      @event = Event.new
       render :new
     end
   end
 
   def show
     @event = Event.find(params[:id])
+    @user = current_user
   end
 
   def edit
