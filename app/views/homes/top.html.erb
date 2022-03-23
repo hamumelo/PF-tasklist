@@ -20,13 +20,13 @@
 
 <div class="col-md-8">
 <%= @user.name %>
-<%= week_calendar events: @events do |date, events| %>
+<%= week_calendar events: @user.events do |date, events| %>
   <%= date.day %>
 
     <div>
       <%= link_to '＋', new_event_path %>
     </div>
-  <% user.events.each do |event| %>
+  <% events.each do |event| %>
     <div>
       <%= link_to event.title, event %>
     </div>

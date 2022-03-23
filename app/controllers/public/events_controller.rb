@@ -4,7 +4,6 @@ class Public::EventsController < ApplicationController
   def index
     @q = User.ransack(params[:q])
     @users = @q.result(distinct: true)
-    # @events = Event.all
   end
 
   def new
